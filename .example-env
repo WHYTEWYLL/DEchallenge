@@ -1,0 +1,12 @@
+privateKeyToAccount=< create a main account on Ethereum https://www.alchemy.com/ and insert yourpivatekey>
+
+Also create your aws config using the 'awscli':
+
+~user/.aws/config
+
+[default]
+region = us-east-1
+
+[s3]
+aws_access_key_id= <>
+aws_secret_access_key=<>
