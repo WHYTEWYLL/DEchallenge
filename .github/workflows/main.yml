@@ -12,6 +12,7 @@ on:
 
 env:
   AWS_REGION: "us-east-1"
+  ALCHEMY_TOKEN: ${{ secrets.privateKeyToAccount }}
 
 jobs:
   run_dbt_jobs:
