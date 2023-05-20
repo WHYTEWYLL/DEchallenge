@@ -1,7 +1,4 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 ALCHEMY_TOKEN = os.getenv("privateKeyToAccount") or os.getenv(
     "INPUT_privateKeyToAccount"
