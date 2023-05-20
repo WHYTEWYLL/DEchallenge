@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ALCHEMY_TOKEN = os.getenv("privateKeyToAccount")
+ALCHEMY_TOKEN = os.getenv("privateKeyToAccount") or os.getenv(
+    "INPUT_privateKeyToAccount"
+)
 
 
 BASE_URL = "eth-mainnet.g.alchemy.com/v2/"
