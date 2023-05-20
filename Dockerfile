@@ -8,4 +8,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-ENTRY POINT ["bash"]
+ENTRYPOINT ["bash"]
