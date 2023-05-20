@@ -1,5 +1,5 @@
 ---
-name: CI TEST
+name: TEST
 on:
   workflow_dispatch:
     branches:
