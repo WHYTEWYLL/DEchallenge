@@ -1,5 +1,5 @@
 ---
-name: TEST
+name: adhoc
 on:
   workflow_dispatch:
     branches:
@@ -22,7 +22,7 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
-  run_dbt_jobs:
+  run_adhoc_jobs:
     runs-on: ubuntu-latest
 
     steps:
