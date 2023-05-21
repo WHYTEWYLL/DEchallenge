@@ -32,6 +32,11 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: env
+        run: |
+          echo $ALCHEMY_TOKEN
+          echo $AWS_REGION
+          echo $AWS_ACCESS_KEY_ID
       - name: Run Command
         run: |
           ${{ inputs.command }}
