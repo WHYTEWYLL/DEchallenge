@@ -1,19 +1,25 @@
 ---
-name: adhoc
+name: listener / adhoc
 on:
   workflow_dispatch:
     branches:
       - "main"
     inputs:
+
+      listener:
+        type: boolean
+        description: "Listener"
+        required: false
+
       FromBlock:
         type: string
         description: "From Block"
-        required: true
+        required: false
 
       toBlock:
         type: string
         description: "To Block"
-        required: true
+        required: false
 
 env:
   AWS_REGION: "us-east-1"
@@ -39,6 +45,11 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Command
+
+      if: github.event.inputs.FromBlock != '' && github.event.inputs.toBlock != ''
         run: |
-          python3 advance/main.py  --from_block ${{ inputs.fromBlock }} --to_block ${{ inputs.toBlock }}
+          python3 advance/main.py  --from_block ${{ github.event.inputs.FromBlock }} --to_block ${{ github.event.inputs.toBlock }}
+
+      if : github.event.inputs.listener == true
+        run: |
+          python3 listener/main.py

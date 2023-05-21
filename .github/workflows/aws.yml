@@ -4,11 +4,6 @@ on:
   workflow_dispatch:
     branches:
       - "main"
-    inputs:
-      command:
-        type: string
-        description: "Run Command"
-        required: true
 
 env:
   AWS_REGION: "us-east-1"
