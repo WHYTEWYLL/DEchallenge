@@ -5,9 +5,14 @@ on:
     branches:
       - "main"
     inputs:
-      command:
+      FromBlock:
         type: string
-        description: "Run Command"
+        description: "From Block"
+        required: true
+
+      toBlock:
+        type: string
+        description: "To Block"
         required: true
 
 env:
@@ -36,4 +41,4 @@ jobs:
 
       - name: Run Command
         run: |
-          ${{ inputs.command }}
+          python3 advance/main.py  --from_block ${{ inputs.fromBlock }} --to_block ${{ inputs.toBlock }}
